@@ -9,7 +9,7 @@ public class Place {
     /**
      * уникальный числовой идентефикатор
      */
-    private long id;
+    private int id;
 
     /**
      * массив тегов, характеризирующих данное место
@@ -69,21 +69,21 @@ public class Place {
     /**
      * @param id уникальный числовой идентефикатор
      */
-    public Place(long id) {
+    public Place(int id) {
         this.id = id;
     }
 
     /**
      * @return уникальный числовой идентефикатор
      */
-    public long getId() {
+    public int getId() {
         return id;
     }
 
     /**
      * @param id уникальный числовой идентефикатор
      */
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

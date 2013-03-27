@@ -7,13 +7,13 @@ import com.mongodb.MongoClient;
 import java.net.UnknownHostException;
 
 /**
- * Created with IntelliJ IDEA.
- * User: ihor
- * Date: 3/23/13
- * Time: 10:20 PM
+ * класс генерации конектов к базе
  */
 public class ConnectionFactory {
-
+    /**
+     *  генерация подключения к базе на :2018
+     * @return  MongoClient
+     */
     public static MongoClient getMongoClient() {
         try {
             return new MongoClient();
@@ -23,6 +23,11 @@ public class ConnectionFactory {
         }
     }
 
+    /**
+     * подключение к базе
+     * @param dbName имя базы данных
+     * @return  подключение к базе
+     */
     public static DB getDB(String dbName) {
         MongoClient client = getMongoClient();
         if (client == null)
@@ -30,10 +35,16 @@ public class ConnectionFactory {
         return getMongoClient().getDB(dbName);
     }
 
+    /**
+     * подключение к коллекции Places в базе Kiev на порту 2018
+     * @return   подключение к коллекции Places
+     */
     public static DBCollection getPlacesCollection() {
         DB base = getDB("kiev");
         if (base == null)
             return null;
         return base.getCollection("places");
     }
+
+    //@Test
 }
